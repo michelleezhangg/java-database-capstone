@@ -163,3 +163,85 @@ _As a patient, I want to view my upcoming appointments, so that I can prepare ac
 **Notes**:
 - Allow the user to be able to click into the appointments to see more details about it.
 - Don't need any editing capabilities yet. Just implementing the basics of viewing upcoming appointments at a glance.
+
+## Doctor User Stories
+
+**Title**
+_As a doctor, I want to log into the portal, so that I can manage my appointments._
+
+**Acceptance Criteria**
+1. Be able to safely log into the portal.
+2. Ensure latency is within the given threshold.
+3. Warnings and errors are handled gracefully.
+
+**Priority**: High
+**Story Points**: 3
+**Notes**:
+- Ensure the password is encrypted to avoid security issues.
+
+**Title**
+_As a doctor, I want to log out of the portal, so that I can protect my data._
+
+**Acceptance Criteria**
+1. Fetch the list of doctors.
+2. Ensure latency is within the given threshold.
+3. Warnings and errors are handled gracefully.
+
+**Priority**: High
+**Story Points**: 3
+**Notes**:
+- Ensure data is secure to avoid data leaks and security breaches.
+
+**Title**
+_As a doctor, I want to view my appointment calendar, so that I can stay organized._
+
+**Acceptance Criteria**
+1. Fetch all appointments related to the current logged in doctor.
+2. Ensure latency is within the given threshold.
+3. Warnings and errors are handled gracefully.
+
+**Priority**: High
+**Story Points**: 3
+**Notes**:
+- Display the list neatly with necessary information at first glance.
+- No need to manipulate the appointments yet. That will be a part of another user story.
+
+**Title**
+_As a doctor, I want to mark my unavailability to inform patients only the available slots, so that I can manage my time and communicate through the portal._
+
+**Acceptance Criteria**
+1. Ensure the changes are properly reflected and can be viewed accurately from the user's portal
+2. Ensure latency is within the given threshold.
+3. Warnings and errors are handled gracefully.
+
+**Priority**: High
+**Story Points**: 3
+**Notes**:
+- Use clear UI icons and information to communicate the changes directly and easily spottable to the patient.
+
+**Title**
+_As a doctor, I want to update my profile with specialization and contact information, so that patients have up-to-date information._
+
+**Acceptance Criteria**
+1. Ensure the update works properly and accurately.
+2. Ensure latency is within the given threshold.
+3. Warnings and errors are handled gracefully.
+
+**Priority**: High
+**Story Points**: 3
+**Notes**:
+- Ensure only certain fields can be editable and include validation for all of those fields.
+
+**Title**
+_As a doctor, I want view the patient details for upcoming appointments, so that I can be prepared._
+
+**Acceptance Criteria**
+1. Be able to click on a patient profile and see their information.
+2. Ensure latency is within the given threshold.
+3. Warnings and errors are handled gracefully.
+
+**Priority**: High
+**Story Points**: 3
+**Notes**:
+- Display the patient's information nice and neatly.
+- Ensure sensitive information is not displayed on screen, only the appropriate and necessary ones for doctors to prepare.
