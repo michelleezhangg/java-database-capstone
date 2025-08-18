@@ -1,3 +1,4 @@
+package model;
 @Entity
 public class Patient {
     @Id

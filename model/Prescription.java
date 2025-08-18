@@ -1,3 +1,4 @@
+package model;
 @Document(collection = "prescription")
 public class Prescription {
     @Id
