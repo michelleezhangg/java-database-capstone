@@ -2,6 +2,7 @@ package com.project.back_end.models;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.ElementCollection;
@@ -48,6 +49,15 @@ public class Doctor {
 
     @ElementCollection
     private List<String> availableTimes; // Example: "09:00 - 10:00"
+
+    private int yearsOfExperience;
+
+    @Size(max = 255)
+    private String clinicAddress;
+
+    @JsonIgnore
+    @Size(min = 1, max = 5)
+    private int rating;
 
     /**
      * Get Id
@@ -98,6 +108,30 @@ public class Doctor {
     }
 
     /**
+     * Get Years of Experience
+     * @return yearsOfExperience
+     */
+    public int getYearsOfExperience() {
+        return this.yearsOfExperience;
+    }
+
+    /**
+     * Get Clinic Address
+     * @return clinicAddress
+     */
+    public String getClinicAddress() {
+        return this.clinicAddress;
+    }
+
+    /**
+     * Get Rating
+     * @return rating
+     */
+    public int getRating() {
+        return this.rating;
+    }
+
+    /**
      * Set Name
      * @param name Name
      */
@@ -143,5 +177,29 @@ public class Doctor {
      */
     public void setAvailableTimes(List<String> availableTimes) {
         this.availableTimes = availableTimes;
+    }
+
+    /**
+     * Set Years of Experience
+     * @param yearsOfExperience Years of Experience
+     */
+    public void setYearsOfExperience(int yearsOfExperience) {
+        this.yearsOfExperience = yearsOfExperience;
+    }
+
+    /**
+     * Set Clinic Address
+     * @param clinicAddress Clinic Address
+     */
+    public void setClinicAddress(String clinicAddress) {
+        this.clinicAddress = clinicAddress;
+    }
+
+    /**
+     * Set Rating
+     * @param rating Rating
+     */
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }

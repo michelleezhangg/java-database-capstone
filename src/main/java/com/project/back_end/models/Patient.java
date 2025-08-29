@@ -1,5 +1,8 @@
 package com.project.back_end.models;
 
+import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Entity;
@@ -8,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
@@ -42,6 +46,19 @@ public class Patient {
     @NotNull
     @Size(max = 255)
     private String address;
+
+    @NotNull
+    @Past
+    private LocalDate dateOfBirth;
+
+    @NotNull
+    @Size(max = 255)
+    @JsonIgnore
+    private String emergencyContact;
+
+    @NotNull
+    @Size(max = 255)
+    private String insuranceProvider;
 
     /**
      * Get Id
@@ -84,6 +101,30 @@ public class Patient {
     }
 
     /**
+     * Get Date of Birth
+     * @return dateOfBirth
+     */
+    public LocalDate getDateOfBirth() {
+        return this.dateOfBirth;
+    }
+
+    /**
+     * Get Emergency Contact
+     * @return emergencyContact
+     */
+    public String getEmergencyContact() {
+        return this.emergencyContact;
+    }
+
+    /**
+     * Get Insurance Provider
+     * @return insuranceProvider
+     */
+    public String getInsuranceProvider() {
+        return this.insuranceProvider;
+    }
+
+    /**
      * Set Name
      * @param name Name
      */
@@ -117,5 +158,29 @@ public class Patient {
      */
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    /**
+     * Set Date Of Birth
+     * @param dateOfBirth Date Of Birth
+     */
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    /**
+     * Set Emergency Contact
+     * @param emergencyContact Emergency Contact
+     */
+    public void setEmergencyContact(String emergencyContact) {
+        this.emergencyContact = emergencyContact;
+    }
+
+    /**
+     * Set Insurance Provider
+     * @param insuranceProvider Insurance Provider
+     */
+    public void setInsuranceProvider(String insuranceProvider) {
+        this.insuranceProvider = insuranceProvider;
     }
 }

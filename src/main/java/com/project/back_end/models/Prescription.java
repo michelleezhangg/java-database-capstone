@@ -33,19 +33,29 @@ public class Prescription {
     @Size(max = 200)
     private String doctorNotes;
 
+    @NotNull
+    @Size(min = 0)
+    private int refillCount;
+
+    @Size(max = 100)
+    private String pharmacyName;
+
     /**
      * Constructor for Prescription
      * @param patientName Patient Name
      * @param appointmentId Appointment ID
      * @param medication Medication
      * @param dosage Dosage
-     * @param doctorNotes Doctor Notes
+     * @param refillCount Refill Count
+     * @param pharmacyCount Pharmacy Count
      */
-    public Prescription(String patientName, Long appointmentId, String medication, String dosage) {
+    public Prescription(String patientName, Long appointmentId, String medication, String dosage, int refillCount, String pharmacyName) {
         this.patientName = patientName;
         this.appointmentId = appointmentId;
         this.medication = medication;
         this.dosage = dosage;
+        this.refillCount = refillCount;
+        this.pharmacyName = pharmacyName;
     }
 
     /**
@@ -97,6 +107,22 @@ public class Prescription {
     }
 
     /**
+     * Get Refill Count
+     * @return refillCount
+     */
+    public int getRefillCount() {
+        return this.refillCount;
+    }
+
+    /**
+     * Get Pharmacy Name
+     * @return pharmacyName
+     */
+    public String getPharmacyName() {
+        return this.pharmacyName;
+    }
+
+    /**
      * Set Patient Name
      * @param patientName Patient Name
      */
@@ -134,5 +160,21 @@ public class Prescription {
      */
     public void setDoctorNotes(String doctorNotes) {
         this.doctorNotes = doctorNotes;
+    }
+
+    /**
+     * Set Refill Count
+     * @param refillCount Refill Count
+     */
+    public void setRefillCount(int refillCount) {
+        this.refillCount = refillCount;
+    }
+
+    /**
+     * Set Pharmacy Name
+     * @param pharmacyName Pharmacy Name
+     */
+    public void setPharmacyName(String pharmacyName) {
+        this.pharmacyName = pharmacyName;
     }
 }

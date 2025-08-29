@@ -12,6 +12,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Transient;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 /**
  * Appointment model represents a scheduled meeting between a doctor and a patient.
@@ -36,7 +37,14 @@ public class Appointment {
     private LocalDateTime appointmentTime;
 
     @NotNull
+    @Size(min = 0, max = 1)
     private int status; // 0 for Scheduled, 1 for Completed
+
+    @Size(max = 200)
+    private String reasonForVisit;
+
+    @Size(max = 100)
+    private String pharmacyName;
 
     /**
      * Get Id
@@ -79,6 +87,22 @@ public class Appointment {
     }
 
     /**
+     * Get Reason for Visit
+     * @return reasonForVisit
+     */
+    public String getReasonForVisit() {
+        return this.reasonForVisit;
+    }
+
+    /**
+     * Get Pharmacy Name
+     * @return pharmacyName
+     */
+    public String getPharmacyName() {
+        return this.pharmacyName;
+    }
+
+    /**
      * Set Doctor
      * @param doctor Doctor
      */
@@ -108,6 +132,22 @@ public class Appointment {
      */
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    /**
+     * Set Reason for Visit
+     * @param reasonForVisit Reason for Visit
+     */
+    public void setReasonForVisit(String reasonForVisit) {
+        this.reasonForVisit = reasonForVisit;
+    }
+
+    /**
+     * Set Pharmacy Name
+     * @param pharmacyName Pharmacy Name
+     */
+    public void setPharmacyName(String pharmacyName) {
+        this.pharmacyName = pharmacyName;
     }
 
     /**
