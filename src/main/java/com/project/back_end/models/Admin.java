@@ -42,6 +42,14 @@ public class Admin {
     }
 
     /**
+     * Get Password
+     * @return password
+     */
+    public String getPassword() {
+        return this.password;
+    }
+
+    /**
      * Set Username
      * @param username Username
      */

@@ -85,6 +85,14 @@ public class Patient {
     }
 
     /**
+     * Get Password
+     * @return password
+     */
+    public String getPassword() {
+        return this.password;
+    }
+
+    /**
      * Get Phone
      * @return phone
      */
