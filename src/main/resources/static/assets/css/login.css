@@ -33,45 +33,80 @@ main {
     padding: 40px 20px;
 }
 
-.role-selection {
+.login-container {
     background: white;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    text-align: center;
     max-width: 400px;
     width: 100%;
 }
 
-.role-selection h2 {
+.login-container h2 {
     font-size: 2rem;
     color: #2c3e50;
     margin-bottom: 30px;
+    text-align: center;
 }
 
-.button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.form-group {
+    margin-bottom: 20px;
 }
 
-.role-button {
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.login-button {
+    width: 100%;
     background-color: #3498db;
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 15px;
     font-size: 1.2rem;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.role-button:hover {
+.login-button:hover {
     background-color: #2980b9;
 }
 
-.role-button:active {
+.login-button:active {
     transform: translateY(1px);
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
 }
 
 footer {
